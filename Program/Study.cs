@@ -1,10 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Newtonsoft.Json;
+using System.Xml.Serialization;
 
 namespace Program
 {
-	public class Study
-	{
-	}
+    [Serializable]
+    public class Study
+    {
+        [XmlElement(ElementName = "name")]
+        [JsonProperty("name")]
+        public string name { get; set; }
+        [XmlElement(ElementName = "mode")]
+        [JsonProperty("mode")]
+        public string mode { get; set; }
+
+        public Study() { }
+    }
 }
